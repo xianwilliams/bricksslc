@@ -1,0 +1,121 @@
+[
+  {
+    "episode": 1,
+    "sourceIn": 30,
+    "duration": 2,
+    "timelineIn": 0,
+    "label": "warehouse-wide"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 187,
+    "duration": 1.8,
+    "timelineIn": 2,
+    "label": "creating-phone-film"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 1228.1,
+    "duration": 1.8,
+    "timelineIn": 3.8,
+    "label": "race-car-detail"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 829.8,
+    "duration": 2,
+    "timelineIn": 5.6,
+    "label": "basketball-pass"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 1385,
+    "duration": 2.2,
+    "timelineIn": 7.6,
+    "label": "celebration"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 288,
+    "duration": 1.8,
+    "timelineIn": 9.8,
+    "label": "through-the-house"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 602,
+    "duration": 1.8,
+    "timelineIn": 11.6,
+    "label": "edit-suite"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 429,
+    "duration": 1.6,
+    "timelineIn": 13.4,
+    "label": "drawing"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 608.8,
+    "duration": 1.8,
+    "timelineIn": 15.0,
+    "label": "table-laughter"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 342,
+    "duration": 1,
+    "timelineIn": 16.8,
+    "label": "warehouse-light"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 713,
+    "duration": 1.4,
+    "timelineIn": 17.8,
+    "label": "handshake"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 1327,
+    "duration": 2,
+    "timelineIn": 19.2,
+    "label": "shooting-hoops"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 271,
+    "duration": 1.4,
+    "timelineIn": 21.2,
+    "label": "studio-walk"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 875,
+    "duration": 1.6,
+    "timelineIn": 22.6,
+    "label": "birthday-in-the-house"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 1952,
+    "duration": 1.8,
+    "timelineIn": 24.2,
+    "label": "warehouse-dog"
+  },
+  {
+    "episode": 2,
+    "sourceIn": 332,
+    "duration": 2.4,
+    "timelineIn": 26.0,
+    "label": "house-culture"
+  },
+  {
+    "episode": 1,
+    "sourceIn": 30.4,
+    "duration": 1.6,
+    "timelineIn": 28.4,
+    "label": "wide-return"
+  }
+]

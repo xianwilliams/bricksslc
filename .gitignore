@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+.turbo/
+.cache/
+.eslintcache
+.vercel/
+.netlify/
+.env*
+!.env.example
+.DS_Store
+.idea/
+.vscode/
+*.log
+coverage/
+BRICKS GFX ASSETS/
+research/
+scrollcraft/builds/bricks/qa/
+*.tsbuildinfo
