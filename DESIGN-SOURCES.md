@@ -56,3 +56,9 @@ There are 36 registered photographic layer entries, each with a corresponding cl
 The Outside Marketing “Events & experiences / Make it a moment” background is a five-second Higgsfield `flux_3_video` generation from the exact supplied `event-wide.webp` photograph. The same photo was supplied as both start and end reference for looping, with subtle ambient movement and no generated audio. Job `dfcd551d-b8bf-4c3d-b2b8-e19bb2a3bae1` completed on September 25, 2026. The local optimized output is `public/media/event-photo-loop.mp4`; it plays muted in view and pauses offscreen. It is an animated interpretation of the photograph, not documentary footage of that event.
 
 The botanical and black-wall scene is a designed composition, not an unaltered documentary photo of a physical neon installation. The brand mark itself is always the original.
+
+## September 30 visual revision
+
+The pink slips now use the twelve original transparent PNG company logos, rendered with the card's ink color through CSS alpha masks. The source marks are unchanged. The selected member portraits and Rambo scene use intact originals instead of separated foregrounds; the card surfaces retain their scroll motion. `public/media/rambo.webp` is byte-identical to the original URL supplied by the user.
+
+Culture adds two optimized photographs from the supplied `PHOTO.zip` nested archives: `09112026_Bricks-39.jpg` becomes `culture-live.webp`, and `09112026_Bricks-41.jpg` becomes `culture-crowd.webp`. Both show actual live-show scenes. The original DJ photograph and existing episode excerpt complete the tighter gallery; no event imagery was generated.

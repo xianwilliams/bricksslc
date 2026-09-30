@@ -114,6 +114,7 @@ export default function Home() {
         </div>
         <Photo
           name="rambo"
+          layered={false}
           alt="Life in the warehouse beside the BRICKS supercar collection"
           className="culture-tall"
         />

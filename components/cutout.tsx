@@ -13,14 +13,25 @@ const photoLayers: Record<string, LayerSpec> = layers;
 
 /** Keep the complete photograph until all three compositing assets are decoded.
  * Only the generated alpha is used on people; their RGB pixels stay original. */
-export function LayeredImage({ name, src, alt }: { name: string; src: string; alt: string }) {
+export function LayeredImage({
+  name,
+  src,
+  alt,
+  layered = true,
+  position = name === 'talk' ? 'left' : 'center',
+}: {
+  name: string;
+  src: string;
+  alt: string;
+  layered?: boolean;
+  position?: 'center' | 'top' | 'left';
+}) {
   const id = useId().replaceAll(':', '');
   const root = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
-  const spec = photoLayers[name];
-  const viewBox = spec
-    ? `0 0 ${name === 'rambo' ? spec.width * 0.75 : spec.width} ${spec.height}`
-    : undefined;
+  const spec = layered ? photoLayers[name] : undefined;
+  const viewBox = spec ? `0 0 ${spec.width} ${spec.height}` : undefined;
+  const alignment = position === 'top' ? 'xMidYMin' : position === 'left' ? 'xMinYMid' : 'xMidYMid';
   const plate = `/media/plates/${name}.webp`;
   const mask = `/media/layers/${name}.webp`;
 
@@ -61,7 +72,7 @@ export function LayeredImage({ name, src, alt }: { name: string; src: string; al
       className="layered-image"
       data-layer-ready={ready}
       data-photo={name}
-      data-focal={name === 'talk' ? 'left' : undefined}
+      data-focal={position}
     >
       <div className="layer-background-frame">
         <img
@@ -77,7 +88,7 @@ export function LayeredImage({ name, src, alt }: { name: string; src: string; al
             {ready && (
               <svg
                 viewBox={viewBox}
-                preserveAspectRatio={name === 'talk' ? 'xMinYMid slice' : 'xMidYMid slice'}
+                preserveAspectRatio={`${alignment} slice`}
                 aria-hidden="true"
                 focusable="false"
               >
@@ -146,7 +157,7 @@ export function LayeredImage({ name, src, alt }: { name: string; src: string; al
         <svg
           className="depth-foreground"
           viewBox={viewBox}
-          preserveAspectRatio={name === 'talk' ? 'xMinYMid slice' : 'xMidYMid slice'}
+          preserveAspectRatio={`${alignment} slice`}
           aria-hidden="true"
           focusable="false"
         >

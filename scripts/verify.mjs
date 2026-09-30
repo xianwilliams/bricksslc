@@ -127,7 +127,10 @@ try {
         width,
         result.textOverflow.length ? result.textOverflow : 'pass',
       );
-      if (width === 1440 && ['', 'contact', 'about-us', 'members', 'privacy'].includes(route)) {
+      if (
+        width === 1440 &&
+        ['', 'contact', 'about-us', 'members', 'privacy', 'events'].includes(route)
+      ) {
         const results = await new AxeBuilder({ page: p })
           .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
           .analyze();
@@ -283,10 +286,10 @@ try {
 
   // These regressions reproduce the original static/doubled cutout problem.
   for (const [route, name] of [
-    ['', 'rambo'],
+    ['', 'work'],
     ['outside-marketing', 'talk'],
     ['members', 'about-us-9'],
-    ['members', 'mike-hardle'],
+    ['members', 'businessclub-17'],
   ]) {
     await visit(page, route);
     const layer = page.locator(`[data-photo="${name}"]`).first();
@@ -364,9 +367,9 @@ try {
   );
 
   const failedLayer = await c.newPage();
-  await failedLayer.route('**/media/plates/rambo.webp', (r) => r.abort());
+  await failedLayer.route('**/media/plates/work.webp', (r) => r.abort());
   await visit(failedLayer, '');
-  const fallback = failedLayer.locator('[data-photo="rambo"]');
+  const fallback = failedLayer.locator('[data-photo="work"]').first();
   await fallback.scrollIntoViewIfNeeded();
   await failedLayer.waitForTimeout(900);
   assert.equal(await fallback.getAttribute('data-layer-ready'), 'false');
@@ -463,7 +466,7 @@ try {
     'Inquiry deep link, conditional fields, review, mailto recipient, edit preservation and event details. No email sent.',
   );
 
-  for (const route of ['', 'members', 'about-us', 'contact']) {
+  for (const route of ['', 'members', 'about-us', 'contact', 'events']) {
     await page.setViewportSize({ width: 360, height: 640 });
     await visit(page, route);
     assert.equal(

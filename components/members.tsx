@@ -2,6 +2,7 @@ import { LayeredImage } from './cutout';
 import { Photo } from './photo';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
+import type { CSSProperties } from 'react';
 
 type MemberProps = {
   name: string;
@@ -23,6 +24,7 @@ export function PinkSlip({
   logo = '/brand/logo.png',
 }: MemberProps) {
   const fruitstand = image === 'businessclub-31';
+  const framedPortrait = fruitstand || image === 'businessclub-36' || image === 'businessclub-45';
   return (
     <article className={`pink-slip ${fruitstand ? 'slip-duo' : ''}`} data-slip id={image}>
       <div className="slip-paper">
@@ -32,7 +34,8 @@ export function PinkSlip({
         </div>
         <div className="slip-identity">
           <div
-            className={`slip-company-logo ${logo === '/brand/logo.png' ? 'bricks-company-logo' : ''}`}
+            className="slip-company-logo"
+            style={{ '--company-logo': `url("${logo}")` } as CSSProperties}
           >
             <img
               src={logo}
@@ -81,6 +84,8 @@ export function PinkSlip({
             name={image}
             src={`/media/${image}.webp`}
             alt={fruitstand ? 'Omar Prestwich, Fruitstand Studios' : name}
+            layered={!framedPortrait}
+            position={framedPortrait ? 'top' : 'center'}
           />
           {fruitstand && <span className="portrait-label">Omar Prestwich</span>}
           <div className="slip-photo-edge" />
@@ -91,17 +96,20 @@ export function PinkSlip({
               name="mike-hardle"
               src="/media/mike-hardle.webp"
               alt="Mike Hardle outdoors, photographed for the Fruitstand Studios team"
+              layered={false}
+              position="top"
             />
             <span className="portrait-label">Mike Hardle</span>
           </div>
         )}
       </div>
-      <div className="slip-tape" aria-hidden="true" />
+      {!fruitstand && <div className="slip-tape" aria-hidden="true" />}
     </article>
   );
 }
 
 export function VipBadge({ name, role, image, bio, index = 0 }: MemberProps) {
+  const framedPortrait = ['about-us-12', 'about-us-13', 'about-us-14'].includes(image);
   return (
     <article className="vip-badge" data-badge id={image}>
       <div className="vip-strap" aria-hidden="true" />
@@ -111,7 +119,12 @@ export function VipBadge({ name, role, image, bio, index = 0 }: MemberProps) {
         <span>HOUSE TEAM / SLC</span>
       </div>
       <div className="vip-portrait">
-        <Photo name={image} alt={`${name}, ${role}`} />
+        <Photo
+          name={image}
+          alt={`${name}, ${role}`}
+          layered={!framedPortrait}
+          position={framedPortrait ? 'top' : 'center'}
+        />
         <span className="vip-portrait-number">0{index + 1}</span>
       </div>
       <div className="vip-details">

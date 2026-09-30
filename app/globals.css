@@ -2337,8 +2337,8 @@ dialog::backdrop {
   width: 130px;
   height: 35px;
   background: #dfd2a799;
-  top: 45px;
-  right: 16%;
+  top: 70px;
+  right: 3%;
   rotate: 12deg;
   z-index: 4;
   clip-path: polygon(
@@ -2369,90 +2369,140 @@ dialog::backdrop {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-/* Events: oversized contact sheet and an honest event archive. */
+/* Culture: full-width live scenes, a tight moving contact sheet, then the invitation. */
+.event-intro {
+  padding-block: 76px;
+  gap: 7%;
+}
 .event-intro h2 {
   font-size: clamp(52px, 6.3vw, 96px);
 }
 .event-gallery {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 0 var(--gutter);
   isolation: isolate;
 }
-.event-gallery > .depth-photo {
-  height: 530px;
+.event-feature {
+  position: relative;
+  height: clamp(580px, 85svh, 960px);
+  overflow: hidden;
+  isolation: isolate;
 }
-.event-gallery > .depth-photo:nth-child(2) {
-  margin-top: 150px;
-  height: 470px;
+.event-feature > .depth-photo,
+.event-dj > .depth-photo {
+  position: absolute;
+  inset: 0;
 }
-.event-gallery > .depth-photo:nth-child(4) {
-  margin-top: -90px;
-  height: 570px;
+.event-feature-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(25deg, #000c, transparent 60%);
+  pointer-events: none;
 }
 .event-gallery-title {
   position: absolute;
   left: var(--gutter);
-  top: 36%;
-  z-index: 5;
-  pointer-events: none;
-  filter: drop-shadow(0 0 40px #0009);
+  bottom: 7%;
+  z-index: 2;
+}
+.event-gallery-title .micro {
+  margin-bottom: 25px;
+  max-width: 34ch;
+  line-height: 1.6;
 }
 .event-gallery-title h2 {
-  font-size: clamp(100px, 17vw, 260px);
-  line-height: 0.85;
+  font-size: clamp(100px, 16vw, 245px);
+  line-height: 0.88;
 }
 .event-gallery-title h2 span {
   color: var(--gold);
 }
+.event-frame-note {
+  position: absolute;
+  right: var(--gutter);
+  top: 32px;
+  padding: 10px 12px;
+  background: #10100fe0;
+}
+.event-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-block: 8px;
+}
+.event-dj {
+  position: relative;
+  min-height: 540px;
+}
+.event-dj > span {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  padding: 10px 12px;
+  background: #10100fe0;
+  line-height: 1.6;
+}
+.event-mosaic .scroll-film {
+  height: 540px;
+  min-height: 0;
+  overflow: hidden;
+}
+.event-mosaic .scroll-film-word {
+  font-size: clamp(60px, 9vw, 145px);
+  top: 0;
+  left: 0;
+}
+.event-crowd {
+  height: clamp(520px, 75svh, 840px);
+}
+.event-crowd .event-gallery-title h2 {
+  font-size: clamp(72px, 12.5vw, 190px);
+}
+.event-crowd .layer-original {
+  object-position: 65% center;
+}
 .event-board {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 10%;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 7%;
   align-items: start;
-}
-.event-board-heading {
-  position: sticky;
-  top: 70px;
+  padding-block: 76px;
 }
 .event-board-heading h2 {
   font-size: clamp(58px, 6.8vw, 105px);
 }
-.event-board-heading p {
+.event-board-heading > p {
   font-size: 13px;
   color: var(--soft);
-  margin-top: 28px;
+  margin-block: 24px 32px;
+}
+.event-board-heading > .depth-photo {
+  height: clamp(320px, 34vw, 520px);
 }
 .event-list article {
-  padding: 40px 0 50px;
+  padding: 28px 0 32px;
   border-top: 1px solid var(--line);
 }
 .event-list article > .micro {
   color: var(--gold);
-  margin-bottom: 26px;
+  margin-bottom: 18px;
   font-size: 10px;
 }
 .event-list h3 {
-  font-size: clamp(35px, 4.2vw, 64px);
-  margin-bottom: 22px;
+  font-size: clamp(35px, 3.7vw, 56px);
+  margin-bottom: 18px;
 }
 .event-list p:not(.micro) {
   font-size: 14px;
   color: var(--soft);
   line-height: 1.8;
-  max-width: 40ch;
-  margin-bottom: 25px;
-}
-.event-list .depth-photo {
-  height: 350px;
+  max-width: 46ch;
+  margin-bottom: 20px;
 }
 .event-next .arrow-link {
   margin-right: 25px;
 }
 .event-next h3 {
-  font-size: clamp(50px, 6vw, 90px);
+  font-size: clamp(46px, 5vw, 76px);
 }
 /* Art: collectible editorial planes, with a keyboard-operated inspection view. */
 .art-intro h2 {
@@ -3024,9 +3074,6 @@ dialog::backdrop {
   .team-grid .depth-photo {
     height: 330px;
   }
-  .event-gallery-title h2 {
-    font-size: 15vw;
-  }
   .content-process h2 {
     font-size: 48px;
   }
@@ -3440,28 +3487,6 @@ dialog::backdrop {
   .house-team-slips > .section-heading {
     padding-top: 35px;
   }
-  .event-gallery {
-    gap: 17px;
-    padding: 0 24px;
-  }
-  .event-gallery > .depth-photo {
-    height: 260px;
-  }
-  .event-gallery > .depth-photo:nth-child(2) {
-    height: 245px;
-    margin-top: 75px;
-  }
-  .event-gallery > .depth-photo:nth-child(4) {
-    height: 250px;
-    margin-top: -40px;
-  }
-  .event-gallery-title {
-    top: 36%;
-    left: 24px;
-  }
-  .event-gallery-title h2 {
-    font-size: 20vw;
-  }
   .event-board {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -3489,9 +3514,6 @@ dialog::backdrop {
   }
   .event-list p:not(.micro) {
     font-size: 13px;
-  }
-  .event-list .depth-photo {
-    height: 300px;
   }
   .art-intro > p {
     font-size: 14px;
@@ -3750,8 +3772,8 @@ dialog::backdrop {
   width: fit-content;
   max-width: 100%;
   overflow: hidden;
-  padding-bottom: 0.07em;
-  margin-bottom: -0.07em;
+  padding-block: 0.08em;
+  margin-block: -0.08em;
 }
 .home-hero h1 > .hero-line {
   color: var(--ink);
@@ -3763,7 +3785,7 @@ dialog::backdrop {
 .hero-line::after {
   content: '';
   position: absolute;
-  inset: 0.06em 0 0.03em;
+  inset: 0;
   background: var(--gold);
   pointer-events: none;
   transform-origin: left;
@@ -3975,15 +3997,6 @@ dialog::backdrop {
   width: 100%;
   height: 610px;
 }
-.event-gallery > .scroll-film {
-  grid-column: 1;
-  margin-top: -120px;
-  height: 540px;
-}
-.event-gallery > .scroll-film .scroll-film-word {
-  font-size: 5vw;
-  top: 1%;
-}
 .bricked-up-feature > .scroll-film {
   height: 580px;
 }
@@ -4014,19 +4027,24 @@ dialog::backdrop {
   line-height: 1.6;
 }
 .slip-company-logo {
-  background: #fff;
+  position: relative;
   width: 162px;
   height: 78px;
   padding: 10px 13px;
   flex-shrink: 0;
 }
+.slip-company-logo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  mask: var(--company-logo) center / contain no-repeat;
+}
 .slip-company-logo > img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-.bricks-company-logo {
-  background: #111;
+  opacity: 0;
 }
 .slip-title {
   padding-top: 26px;
@@ -4034,8 +4052,13 @@ dialog::backdrop {
 .slip-info {
   margin-top: 25px;
 }
-.slip-scene {
-  overflow: visible;
+.slip-scene,
+.slip-second-scene {
+  overflow: hidden;
+}
+.slip-scene .depth-foreground,
+.slip-second-scene .depth-foreground {
+  overflow: hidden;
 }
 .slip-scene .layer-background-frame {
   filter: saturate(0.75);
@@ -4043,15 +4066,20 @@ dialog::backdrop {
 .slip-scene .depth-foreground {
   filter: saturate(0.75);
 }
+.slip-duo .slip-portrait {
+  width: 45%;
+  height: 450px;
+}
 .slip-duo .slip-scene {
-  inset: 1% 24% 25% -2%;
+  inset: 0 52% 12% 0;
+  transform: rotate(-2deg);
 }
 .slip-second-scene {
   position: absolute;
-  left: 30%;
-  right: -2%;
-  top: 37%;
-  bottom: -3%;
+  left: 52%;
+  right: 0;
+  top: 12%;
+  bottom: 0;
   border: 7px solid #d9d5ca;
   background: var(--surface);
   box-shadow: -12px 12px 30px #0007;
@@ -4277,21 +4305,6 @@ dialog::backdrop {
   .film-portrait {
     height: 430px;
   }
-  .event-gallery > .scroll-film {
-    margin-top: -25px;
-    height: 320px;
-    min-height: 0;
-    width: 116%;
-  }
-  .event-gallery > .scroll-film .scroll-film-caption > .micro {
-    display: none;
-  }
-  .event-gallery > .scroll-film .scroll-film-caption > span:last-child {
-    font-size: 18px;
-  }
-  .event-gallery > .scroll-film .scroll-film-index {
-    display: none;
-  }
   .bricked-up-feature > .scroll-film {
     height: 430px;
   }
@@ -4329,25 +4342,22 @@ dialog::backdrop {
     margin-top: 20px;
   }
   .slip-duo {
-    padding-top: 328px;
+    padding-top: 280px;
   }
   .slip-duo .slip-portrait {
-    height: 365px;
+    height: 290px;
     right: 1%;
     width: 96%;
   }
   .slip-duo .slip-scene {
-    inset: 0 35% 15% 0;
+    inset: 0 52% 12% 0;
   }
   .slip-second-scene {
-    left: 36%;
+    left: 52%;
     right: 0;
-    top: 19%;
-    bottom: -4%;
+    top: 12%;
+    bottom: 0;
     border-width: 5px;
-  }
-  .slip-duo .slip-tape {
-    top: 306px;
   }
   .portrait-label {
     font-size: 6px;
@@ -4417,8 +4427,11 @@ dialog::backdrop {
 .layered-image[data-focal='left'] .layer-original {
   object-position: left center;
 }
-.layered-image[data-photo='rambo'] .layer-original {
-  object-position: 25% center;
+.layered-image[data-focal='top'] .layer-original {
+  object-position: center top;
+}
+.vip-portrait [data-photo='about-us-14'] .layer-original {
+  object-position: center 22%;
 }
 
 /* Supporting type is a deliberate mono voice; headlines keep the original BRICKS face. */
@@ -4482,7 +4495,7 @@ dialog::backdrop {
   color: inherit;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  padding: 0.015em 0.06em;
+  padding: 0.12em 0.08em;
   font-weight: 800;
 }
 .scroll-highlight > span {
@@ -4569,8 +4582,9 @@ dialog::backdrop {
 .culture-tall {
   grid-column: 2;
   grid-row: 1;
-  height: 550px;
-  margin-top: -24px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  align-self: center;
 }
 .culture-section > .culture-wide {
   grid-column: 1;
@@ -4765,16 +4779,16 @@ dialog::backdrop {
   .culture-tall {
     grid-column: 1;
     grid-row: 2;
-    height: 340px;
-    width: 72%;
-    margin: 12px 0 0 auto;
+    height: auto;
+    width: 100%;
+    margin: 12px 0 0;
   }
   .culture-section > .culture-wide {
     grid-column: 1;
     grid-row: 3;
     height: 310px;
     width: 92%;
-    margin: -104px 0 0;
+    margin: 0;
   }
   .culture-caption {
     grid-column: 1;
@@ -4813,5 +4827,51 @@ dialog::backdrop {
 @media (prefers-reduced-motion: reduce) {
   .scroll-highlight {
     --highlight: 100% !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .event-intro,
+  .event-board {
+    padding-block: 48px;
+    gap: 32px;
+  }
+  .event-feature {
+    height: 640px;
+    max-height: 85svh;
+    min-height: 460px;
+  }
+  .event-gallery-title h2 {
+    font-size: clamp(76px, 18vw, 136px);
+  }
+  .event-crowd .event-gallery-title h2 {
+    font-size: clamp(44px, 12.2vw, 90px);
+  }
+  .event-gallery-title .micro {
+    font-size: 9px;
+    max-width: 28ch;
+    margin-bottom: 18px;
+  }
+  .event-frame-note {
+    top: 20px;
+    font-size: 8px;
+  }
+  .event-mosaic {
+    grid-template-columns: 1fr;
+  }
+  .event-dj {
+    min-height: 340px;
+  }
+  .event-mosaic .scroll-film {
+    height: 430px;
+  }
+  .event-mosaic .scroll-film-word {
+    font-size: 16vw;
+  }
+  .event-mosaic .scroll-film-caption > span:last-child {
+    max-width: 22ch;
+  }
+  .event-mosaic .scroll-film-index {
+    right: 20px;
   }
 }

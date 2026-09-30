@@ -16,7 +16,7 @@ export default function Events() {
         accent="to be there."
         kicker="BRICKS events"
         video="culture"
-        poster="/media/crowd.webp"
+        poster="/media/culture-live.webp"
         description="Private gatherings. Unfiltered energy. A room full of possibility."
       />
       <section className="section event-intro">
@@ -34,24 +34,56 @@ export default function Events() {
           <ArrowLink href="/contact?interest=Event%20inquiry">Plan your event</ArrowLink>
         </div>
       </section>
-      <section className="event-gallery">
-        <Photo name="night" alt="A night inside BRICKS" />
-        <Photo name="dj" alt="The DJ performing at BRICKS" />
-        <div className="event-gallery-title">
-          <h2>
-            After
-            <br />
-            <span>hours.</span>
-          </h2>
+      <section className="event-gallery" aria-label="Life at BRICKS">
+        <div className="event-feature" data-motion-owned>
+          <Photo
+            name="culture-live"
+            alt="Red stage lights over a packed live show at BRICKS"
+            layered={false}
+          />
+          <div className="event-feature-shade" aria-hidden="true" />
+          <div className="event-gallery-title">
+            <p className="micro">The volume goes up. The house comes alive.</p>
+            <h2>
+              After
+              <br />
+              <span>hours.</span>
+            </h2>
+          </div>
+          <span className="event-frame-note micro">Live from the house / SLC</span>
         </div>
-        <Photo name="crowd" alt="A crowd at a BRICKS cultural gathering" />
-        <ScrollFilm
-          film="celebrate-motion"
-          word="TOGETHER"
-          label="The energy of the house"
-          caption="Some moments speak for themselves."
-          className="film-portrait"
-        />
+        <div className="event-mosaic">
+          <div className="event-dj">
+            <Photo
+              name="dj"
+              alt="A DJ working the decks above the BRICKS warehouse floor"
+              layered={false}
+            />
+            <span className="micro">Behind the decks. In the moment.</span>
+          </div>
+          <ScrollFilm
+            film="celebrate-motion"
+            word="TOGETHER"
+            label="The energy of the house"
+            caption="Some moments speak for themselves."
+          />
+        </div>
+        <div className="event-feature event-crowd" data-motion-owned>
+          <Photo
+            name="culture-crowd"
+            alt="Hands in the air in the crowd at a BRICKS live event"
+            layered={false}
+          />
+          <div className="event-feature-shade" aria-hidden="true" />
+          <div className="event-gallery-title">
+            <p className="micro">Good people. All in.</p>
+            <h2>
+              No
+              <br />
+              <span>sidelines.</span>
+            </h2>
+          </div>
+        </div>
       </section>
       <section className="section event-board">
         <div className="event-board-heading" data-reveal>
@@ -61,13 +93,17 @@ export default function Events() {
             <span className="gold">house.</span>
           </h2>
           <p>Recent scenes and what’s next.</p>
+          <Photo
+            name="event-wide"
+            alt="Cars, casino tables and a full house at BRICKS"
+            layered={false}
+          />
         </div>
         <div className="event-list">
           <article>
             <p className="micro">Scenes from the house</p>
             <h3>Casino night</h3>
             <p>A different kind of evening, surrounded by cars, art and good company.</p>
-            <Photo name="casino" alt="Casino night in the warehouse" />
           </article>
           <article>
             <p className="micro">From the archive · March 31, 2026</p>

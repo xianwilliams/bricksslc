@@ -50,3 +50,9 @@ Repair every depth photo with a content-aware clean background plate and an orig
 
 ## Copy and typography revision
 Restore original body copy on each corresponding route, including the complete lifestyle/content-system story, the founders’ collective, membership descriptions, founder biography and service details. Split long passages into readable paragraphs alongside authentic moving imagery. Heavy display headings and solid action buttons carry the brand; IBM Plex Mono provides the supporting voice. The culture section pairs a properly spaced member button with a large “Different backgrounds. Shared ambition.” statement. Selected claims and quotes highlight progressively on scroll. Preserve source wording while flagging the original car-capacity inconsistency in the FAQ.
+
+## September 30 visual revision
+
+User direction: fully cover type during highlights; use the original Rambo photograph; blend transparent company logos into the pink slips; keep member faces and torsos properly framed; and make Culture more immersive with stronger event photos and less empty space. The existing brand, navigation and routes stay in place.
+
+Culture should feel immediate and energetic because BRICKS hosts real live events, expressed through full-width stage and crowd photographs, a close DJ scene beside the existing scroll film, and a compact event archive. The progression is invitation → anticipation in the original event copy → peak energy in the red-lit live show → a closer view behind the decks → belonging in the crowd → the next invitation. The two full-width scenes are the visual peak; no empty scroll is authored. Member cards preserve the paper/badge motion, with intact portraits where separation compromised the original crop.

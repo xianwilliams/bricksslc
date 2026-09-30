@@ -1,3 +1,17 @@
+# Verification — September 30, 2026
+
+The requested highlight, People-card, Rambo-photo and Culture-page revisions were checked against the optimized production build at `http://127.0.0.1:3001` before publication to the existing Vercel site.
+
+- Production build, TypeScript, ESLint, Prettier and all eight inquiry tests passed. `npm audit` reported zero vulnerabilities.
+- The full browser verifier passed 40 route/viewport checks and all interaction groups. No missing images, horizontal/text overflow, uncaught browser errors or automated accessibility findings were reported. Accessibility covered Home, About, People, Contact, Privacy and Culture.
+- Visually inspected the affected pink slips and VIP passes at 1440px and 390px, the Culture gallery and archive, the intact Rambo photo, intermediate hero wipes, and fully filled/reduced-motion highlights. The full verifier also covers 360px layouts, reduced-motion video behavior and no-JavaScript content.
+- The original Rambo photo matches the supplied live URL byte-for-byte. Twelve original transparent PNG logos retain their alpha and inherit the pink-slip ink color through CSS masks.
+- Independent simplicity review found no blocking issues. Its obsolete fallback-test target and unused gallery CSS findings were corrected.
+
+Review `/`, `/members` and `/events` on [the Vercel site](https://bricksslc.vercel.app/). Local visual evidence is in `research/sep30/`; the production browser report is `scrollcraft/builds/bricks/qa/verification.json`. These generated QA artifacts are intentionally ignored by Git. Physical mobile-device playback was not tested.
+
+---
+
 # Verification — September 25, 2026
 
 The site is built and running locally for human review at **http://127.0.0.1:3000**. It has not been publicly deployed or committed.
